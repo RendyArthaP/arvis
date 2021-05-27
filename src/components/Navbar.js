@@ -11,9 +11,12 @@ const Navbar = () => {
   return (
     <div className="bg-blue-400 w-full h-16 z-10">
       <div className="flex flex-row justify-between p-4 lg:px-10">
-        <h1 className="text-2xl font-bold font-roboto text-white tracking-wider">
+        <Link 
+          to="/" 
+          className="text-2xl font-bold font-roboto text-white tracking-wider"
+        >
           Arvis
-        </h1>
+        </Link>
         <div className="hidden md:flex flex-row items-center">
           <Link to="/login">
             <span className="mx-2 text-base font-medium font-roboto text-white">
