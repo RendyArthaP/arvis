@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen select-none">
-    <div className="flex flex-col -mt-32 mx-4 bg-white px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-xl shadow-2xl w-full max-w-md  border-l-4 border-blue-400">
-      <h1 className="font-medium font-roboto self-center text-xl sm:text-2xl uppercase bg-blue-400 w-60 text-center shadow-2xl p-4 rounded-xl text-white">
-        Sign In
-      </h1>
+      <div className="flex flex-col -mt-32 mx-4 bg-white px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-xl shadow-2xl w-full max-w-md  border-l-4 border-blue-400">
+        <h1 className="font-medium font-roboto self-center text-xl sm:text-2xl uppercase bg-blue-400 w-60 text-center shadow-2xl p-4 rounded-xl text-white">
+          Sign In
+        </h1>
         <div className="mt-10">
           <form>                
             <div className="relative w-full mb-3">
