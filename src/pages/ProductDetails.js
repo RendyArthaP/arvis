@@ -12,7 +12,7 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(getProductById(id))
   }, [dispatch, id])
-  
+
   return (
     <>
      <Navbar />
@@ -21,7 +21,7 @@ const ProductDetails = () => {
           <img 
             src={productDetails.image}
             alt={productDetails.titleProduct}
-            className="w-full max-w-lg"
+            className="w-full max-w-lg object-fill"
           />
           <div className="flex flex-col py-4 lg:mx-10">
             <h1 className="font-bold text-2xl font-roboto text-blue-500">
