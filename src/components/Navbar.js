@@ -3,15 +3,17 @@ import { Link, useHistory } from 'react-router-dom';
 import Hamburger from '../assets/icons/Hamburger';
 import { useDispatch } from 'react-redux'
 
-const Navbar = ({getToken, logOutActions, isLogin}) => {
+const Navbar = ({getToken, logOutActions}) => {
+  console.log(getToken)
   const dispatch = useDispatch()
   const history = useHistory()
+  const [navbarMobile, setNavbarMobile] = useState(false)
+
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logOutActions(history))
   }
 
-  const [navbarMobile, setNavbarMobile] = useState(false)
   const handleNavbarMobile = () => {
     setNavbarMobile(!navbarMobile)
   }

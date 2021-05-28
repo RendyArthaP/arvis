@@ -11,7 +11,6 @@ const Home = () => {
   const products = useSelector((state) => state.handleProducts.allProduct)
   const loadings = useSelector((state) => state.handleProducts.isLoading)
   const getToken = useSelector((state) => state.firebaseReducer.auth)
-  const isLogin = useSelector((state) => state.handleAuth.isLogged)
 
   useEffect(() => {
     dispatch(getAllProduct())
@@ -22,7 +21,6 @@ const Home = () => {
       <Navbar 
         getToken = {getToken}
         logOutActions = {logOutActions}
-        isLogin = {isLogin}
       />
       <Hero />
       <Product 
