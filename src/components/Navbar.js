@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Hamburger from '../assets/icons/Hamburger';
+import { useDispatch } from 'react-redux'
 
-const Navbar = () => {
+const Navbar = ({getToken, logOutActions, isLogin}) => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logOutActions(history))
+  }
+
   const [navbarMobile, setNavbarMobile] = useState(false)
   const handleNavbarMobile = () => {
     setNavbarMobile(!navbarMobile)
@@ -18,16 +26,32 @@ const Navbar = () => {
           Arvis
         </Link>
         <div className="hidden md:flex flex-row items-center">
-          <Link to="/login">
-            <span className="mx-2 text-base font-medium font-roboto text-white">
-              Login
-            </span>
-          </Link>
-          <Link to="/register">
-            <span className="mx-2 text-base font-medium font-roboto text-white">
-              Register
-            </span>
-          </Link>
+          
+              <div>
+                <h1>
+
+                </h1>
+                <button
+                  className="text-white focus:outline-none"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
+            
+              <>
+                <Link to="/login">
+                  <span className="mx-2 text-base font-medium font-roboto text-white">
+                    Login
+                  </span>
+                </Link>
+                <Link to="/register">
+                  <span className="mx-2 text-base font-medium font-roboto text-white">
+                    Register
+                  </span>
+                </Link>
+              </>
+          
           <Link to="/cart">
             <span className="mx-2 text-base font-medium font-roboto text-white">
               Cart

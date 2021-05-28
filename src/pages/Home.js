@@ -4,11 +4,14 @@ import Navbar from '../components/Navbar'
 import Product from '../components/Product'
 import { useSelector, useDispatch} from 'react-redux';
 import { getAllProduct } from '../redux/actions/product.actions';
+import { logOutActions } from '../redux/actions/auth.actions';
 
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.handleProducts.allProduct)
   const loadings = useSelector((state) => state.handleProducts.isLoading)
+  const getToken = useSelector((state) => state.firebaseReducer.auth)
+  const isLogin = useSelector((state) => state.handleAuth.isLogged)
 
   useEffect(() => {
     dispatch(getAllProduct())
@@ -16,7 +19,11 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar 
+        getToken = {getToken}
+        logOutActions = {logOutActions}
+        isLogin = {isLogin}
+      />
       <Hero />
       <Product 
         products = {products}
